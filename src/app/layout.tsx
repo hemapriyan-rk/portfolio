@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-space-mono",
-});
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Hemapriyan R K - Portfolio",
-  description: "Portfolio of Hemapriyan R K, Computer Science and Engineering (Data Science) student.",
+  title: "Hemapriyan R K · Portfolio",
+  description:
+    "Hemapriyan R K builds reliable systems for the real world: computer vision, mobile apps, secure back-ends. CSE (Data Science) at VIT.",
 };
 
 export default function RootLayout({
@@ -19,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceMono.variable}`}>
+    <html lang="en" className={mono.variable}>
       <body>{children}</body>
     </html>
   );
